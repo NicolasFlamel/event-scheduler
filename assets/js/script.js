@@ -15,7 +15,7 @@ function onLoad() {
 function createTimeBlocks() {
     // 0900-1700 military time
     for(var i = 0; i < 9; i++) {
-        
+
     } 
 }
 
