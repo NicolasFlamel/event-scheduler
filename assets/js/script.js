@@ -1,7 +1,7 @@
 var timerBlocksEl = document.querySelectorAll('.time-block');
 
 var DateTime = luxon.DateTime;
-var taskList = []; //emtpy out later
+var taskList = new Array(9);
 
 function onLoad() {
     var saveBtnEl = document.querySelectorAll('.saveBtn');
@@ -23,10 +23,10 @@ function loadLocalData() {
     var previousDate = localStorage.getItem('date');
     var currentDate = DateTime.now().toLocaleString();
 
-    if(currentDate == previousDate) {
+    if(currentDate == previousDate && localStorage.getItem('tasks')) {
         taskList = JSON.parse(localStorage.getItem('tasks'));
     }else{
-        taskList = [];
+        taskList.fill(null)
     }
 
     localStorage.setItem('date', currentDate);
